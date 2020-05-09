@@ -11,8 +11,8 @@ import javax.persistence.*;
  * @author Stanislav Stoianov
  * @version 1.3
  * @apiNote Hibernate class used to record points in the players table
- * @see edu.ssstoyanov.webserver.Controller.RecordsController
  * @see edu.ssstoyanov.webserver.Service.RecordService
+ * @see edu.ssstoyanov.webserver.Repository.RecordRepository
  * @since 16/04/20
  */
 

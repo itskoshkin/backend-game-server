@@ -13,7 +13,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 /**
  * @apiNote class for configuring web application protection
  * @author Stanislav Stoianov
- * @since 13/04/20.
+ * @since 13/04/20
  * @version 1.6
  */
 

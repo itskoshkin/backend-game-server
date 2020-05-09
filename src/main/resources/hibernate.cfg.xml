@@ -21,7 +21,7 @@
 
 
         <mapping class="edu.ssstoyanov.webserver.Model.User"/>
-        <mapping class="edu.ssstoyanov.webserver.Model.Record"/>
+        <mapping class="edu.ssstoyanov.webserver.Model.Role"/>
 
     </session-factory>
 </hibernate-configuration>

@@ -10,7 +10,6 @@ import org.springframework.web.servlet.ModelAndView;
  * @version 1.0
  */
 
-
 @Controller
 public class GamesController {
 

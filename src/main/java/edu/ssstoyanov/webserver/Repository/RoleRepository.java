@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 /**
  * @author Stanislav Stoianov
  * @version 1.0
- * @apiNote the Hibernate class used to distinguish access by role, controlled using Spring Security
  * @see Role
  * @see edu.ssstoyanov.webserver.Config.WebSecurityConfiguration
  * @see edu.ssstoyanov.webserver.Config.SecurityConfiguration

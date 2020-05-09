@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 /**
  * @apiNote class for encrypting passwords in a database
  * @author Stanislav Stoianov
- * @since 13/04/20.
+ * @since 13/04/20
  * @version 1.0
  */
 

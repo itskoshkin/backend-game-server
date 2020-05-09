@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 /**
  * @author Stanislav Stoianov
  * @version 1.4
- * @apiNote the Hibernate class used to store user data is controlled using Spring Security
  * @see edu.ssstoyanov.webserver.Service.UserService
  * @see User
  * @see edu.ssstoyanov.webserver.Service.UserHandlingService

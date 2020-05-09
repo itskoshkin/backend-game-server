@@ -1,52 +1,37 @@
 package edu.ssstoyanov.webserver.Model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
 /**
  * @author Stanislav Stoianov
- * creation date: 17/04/20.
- * @since 1.0
+ * @version 1.3
+ * @apiNote Hibernate class used to record points in the players table
+ * @see edu.ssstoyanov.webserver.Controller.RecordsController
+ * @see edu.ssstoyanov.webserver.Service.RecordService
+ * @since 17/04/20
  */
 
-// TODO: 20.04.2020
-
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "records")
 public class Record {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", unique = true, nullable = false)
-    private int id;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "userid", nullable = false)
-    private User user;
-
-    @Column(name = "game", nullable = false, length = 32)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "record_id")
+    private Integer id;
+    @Column(name = "game")
     private String game;
-
-    @Column(name = "score", nullable = false)
-    private int score;
-
-
-    public Record() {
-    }
-
-    public String getGame() {
-        return game;
-    }
-
-    public void setGame(String game) {
-        this.game = game;
-    }
-
-    public int getScore() {
-        return score;
-    }
-
-    public void setScore(int score) {
-        this.score = score;
-    }
-
-
+    @Column(name = "score")
+    private Long score;
+    @ManyToOne(optional = false, cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
+    private User user;
 }

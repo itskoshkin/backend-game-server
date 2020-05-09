@@ -13,7 +13,7 @@ import javax.persistence.*;
  * @apiNote Hibernate class used to record points in the players table
  * @see edu.ssstoyanov.webserver.Controller.RecordsController
  * @see edu.ssstoyanov.webserver.Service.RecordService
- * @since 17/04/20
+ * @since 16/04/20
  */
 
 @Data

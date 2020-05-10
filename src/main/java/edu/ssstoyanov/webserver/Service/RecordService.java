@@ -32,4 +32,13 @@ public class RecordService {
         return data;
     }
 
+    public Record saveRecord(String game, Long score, User user){
+        Record record = new Record();
+        record.setUser(user);
+        record.setScore(score);
+        record.setGame(game);
+        recordRepository.saveAndFlush(record);
+        return record;
+    }
+
 }

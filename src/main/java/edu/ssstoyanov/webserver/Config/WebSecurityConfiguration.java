@@ -25,12 +25,12 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Autowired
-    private UserHandlingService userDetailsService;
+    private UserHandlingService userHandlingService;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth
-                .userDetailsService(userDetailsService)
+                .userDetailsService(userHandlingService)
                 .passwordEncoder(bCryptPasswordEncoder);
     }
 
@@ -43,9 +43,9 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                     .antMatchers("/admin/**").hasAuthority("ADMIN")
                     .anyRequest().authenticated()
                 .and()
-                    .formLogin().loginPage("/signin").failureUrl("/login?error=true")
+                    .formLogin().loginPage("/signin").failureUrl("/signin?error=true")
                     .defaultSuccessUrl("/homepage", true)
-                    .usernameParameter("user_name").passwordParameter("password")
+                    .usernameParameter("username").passwordParameter("password")
                 .and()
                     .logout()
                     .logoutSuccessUrl("/signin?logout=true")

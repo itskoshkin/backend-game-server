@@ -33,12 +33,12 @@ public class User {
     @Column(name = "user_id")
     private Integer id;
     @Column(name = "user_name")
-    @Length(min = 5, max = 32, message = "*Username should be at least 5 and no more than 32 characters")
-    @NotEmpty(message = "*Please provide a user name")
+    @Length(min = 5, max = 32, message = "Имя пользователя должно быть диапазоне от 5 до 32 символов")
+    @NotEmpty(message = "Пожалуйста, введите имя пользователя")
     private String username;
     @Column(name = "password")
-    @Length(min = 5, message = "*Password should be at least 5 characters")
-    @NotEmpty(message = "*Please provide your password")
+    @Length(min = 5, message = "Пароль должен состоять хотя бы 5 символов")
+    @NotEmpty(message = "Пожалуйста, введите пароль")
     private String password;
     @ManyToMany(cascade = CascadeType.MERGE)
     @JoinTable(name = "user_role",

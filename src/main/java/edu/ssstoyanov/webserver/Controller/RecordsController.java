@@ -22,6 +22,7 @@ public class RecordsController {
 
     @Autowired
     UserRepository userRepository;
+
     @Autowired
     RecordService recordService;
 

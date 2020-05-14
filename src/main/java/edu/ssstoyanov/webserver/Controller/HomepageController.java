@@ -43,8 +43,7 @@ public class HomepageController {
         ModelAndView modelAndView = new ModelAndView();
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user = userService.findUserByUserName(auth.getName());
-        modelAndView.addObject("userName", "Welcome " + user.getUsername());
-        modelAndView.addObject("adminMessage", "Content Available Only for Users with Admin Role");
+        modelAndView.addObject("adminMessage", "Страница для администратора");
         modelAndView.setViewName("admin");
         return modelAndView;
     }

@@ -29,6 +29,7 @@
                 </div>
                 <label th:if="${#fields.hasErrors('username')}" th:errors="*{username}"
                        class="validation-message"></label>
+
                 <div class="wrap-input100 validate-input" data-validate="Введите пароль">
                     <input class="input100" type="password" name="password" th:field="*{password}" placeholder="Пароль">
                     <span class="focus-input100"></span>

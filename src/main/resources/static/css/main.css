@@ -1,16 +1,16 @@
 @font-face {
-  font-family: Ubuntu-Regular;
-  src: url('../fonts/ubuntu/Ubuntu-Regular.ttf'); 
+  font-family: Roboto;
+  src: url('../fonts/ubuntu/Ubuntu-Regular.ttf');
 }
 
 @font-face {
-  font-family: Ubuntu-Bold;
-  src: url('../fonts/ubuntu/Ubuntu-Bold.ttf'); 
+  font-family: Roboto;
+  src: url('../fonts/ubuntu/Ubuntu-Bold.ttf');
 }
 
 @font-face {
-  font-family: JosefinSans-Bold;
-  src: url('../fonts/JosefinSans/JosefinSans-Bold.ttf'); 
+  font-family: Roboto;
+  src: url('../fonts/JosefinSans/JosefinSans-Bold.ttf');
 }
 
 
@@ -25,19 +25,19 @@
 }
 
 body, html {
-	height: 100%;
-	font-family: Ubuntu-Regular, sans-serif;
+  height: 100%;
+  font-family: Roboto;
 }
 
 /*---------------------------------------------*/
 a {
-	font-family: Ubuntu-Regular;
-	font-size: 14px;
-	line-height: 1.7;
-	color: #666666;
-	margin: 0px;
-	transition: all 0.4s;
-	-webkit-transition: all 0.4s;
+  font-family: Roboto;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #666666;
+  margin: 0px;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
 }
@@ -57,11 +57,11 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 p {
-	font-family: Ubuntu-Regular;
-	font-size: 14px;
-	line-height: 1.7;
-	color: #666666;
-	margin: 0px;
+  font-family: Roboto;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #666666;
+  margin: 0px;
 }
 
 ul, li {
@@ -125,21 +125,21 @@ iframe {
 /*//////////////////////////////////////////////////////////////////
 [ Utility ]*/
 .txt1 {
-  font-family: Ubuntu-Regular;
+  font-family: Roboto;
   font-size: 15px;
   color: #999999;
   line-height: 1.4;
 }
 
 .txt2 {
-  font-family: Ubuntu-Regular;
+  font-family: Roboto;
   font-size: 15px;
   color: #57b846;
   line-height: 1.4;
 }
 
 .txt3 {
-  font-family: Ubuntu-Bold;
+  font-family: Roboto;
   font-size: 15px;
   color: #57b846;
   line-height: 1.4;
@@ -221,7 +221,7 @@ iframe {
 }
 
 .input100 {
-  font-family: Ubuntu-Bold;
+  font-family: Roboto;
   font-size: 15px;
   color: #1b3815;
   line-height: 1.2;
@@ -280,6 +280,7 @@ iframe {
 }
 
 .login100-form-btn {
+  font-family: Roboto;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -293,7 +294,6 @@ iframe {
   background-color: #57b846;
   border-radius: 25px;
 
-  font-family: Ubuntu-Bold;
   font-size: 15px;
   color: #fff;
   line-height: 1.2;
@@ -335,7 +335,7 @@ iframe {
   right: 10px;
   pointer-events: none;
 
-  font-family: Ubuntu-Bold;
+  font-family: Roboto;
   color: #c80000;
   font-size: 13px;
   line-height: 1.4;
@@ -352,7 +352,7 @@ iframe {
 
 .alert-validate::after {
   content: "\f06a";
-  font-family: FontAwesome;
+  font-family: Roboto;
   display: block;
   position: absolute;
   z-index: 1100;

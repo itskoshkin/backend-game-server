@@ -1,10 +1,47 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Игры</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link rel="stylesheet" th:href="@{vendor/bootstrap/css/bootstrap.min.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{vendor/animate/animate.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{vendor/css-hamburgers/hamburgers.min.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{vendor/animsition/css/animsition.min.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{vendor/select2/select2.min.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{vendor/daterangepicker/daterangepicker.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{css/util.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{css/main.css}" type="text/css">
 </head>
 <body>
-<h1>Заплатка для имплементации игр</h1>
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <div class="login100-form validate-form p-l-55 p-r-55 p-t-178">
+                <span class="login100-form-title">Форма для загрузки записей</span>
+                <form action="#" method="post" th:action="@{/games}" th:object="${record}">
+                    <p>Игра: <input th:field="*{game}" type="text"/></p>
+                    <p>Баллы: <input th:field="*{score}" type="number"/></p>
+                    <p><input type="submit" value="Submit"/></p>
+                </form>
+                <div class="text-right p-t-13 p-b-23"></div>
+                <a class="txt3" href="/homepage">Назад</a>
+                <div class="text-right p-t-13 p-b-23"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script th:src="@{vendor/jquery/jquery-3.2.1.min.js}"></script>
+<script th:src="@{vendor/animsition/js/animsition.min.js}"></script>
+<script th:src="@{vendor/bootstrap/js/popper.js}"></script>
+<script th:src="@{vendor/bootstrap/js/bootstrap.min.js}"></script>
+<script th:src="@{vendor/select2/select2.min.js}"></script>
+<script th:src="@{vendor/daterangepicker/moment.min.js}"></script>
+<script th:src="@{vendor/daterangepicker/daterangepicker.js}"></script>
+<script th:src="@{vendor/countdowntime/countdowntime.js}"></script>
+<script th:src="@{js/main.js}"></script>
+
+
 </body>
 </html>

@@ -1,14 +1,8 @@
 package edu.ssstoyanov.webserver.Controller;
 
 import edu.ssstoyanov.webserver.Model.Record;
-import edu.ssstoyanov.webserver.Model.User;
-import edu.ssstoyanov.webserver.Repository.RecordRepository;
-import edu.ssstoyanov.webserver.Repository.UserRepository;
 import edu.ssstoyanov.webserver.Service.RecordService;
-import edu.ssstoyanov.webserver.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,13 +19,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class GamesController {
 
     @Autowired
-    private UserService userService;
-
-    @Autowired
     private RecordService recordService;
-
-    @Autowired
-    private RecordRepository recordRepository;
 
     @GetMapping(value = "/games")
     public String getForm(Model model) {

@@ -1,22 +1,48 @@
 package edu.ssstoyanov.webserver.Controller;
 
+import edu.ssstoyanov.webserver.Model.Record;
+import edu.ssstoyanov.webserver.Model.User;
+import edu.ssstoyanov.webserver.Repository.RecordRepository;
+import edu.ssstoyanov.webserver.Repository.UserRepository;
+import edu.ssstoyanov.webserver.Service.RecordService;
+import edu.ssstoyanov.webserver.Service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 /**
  * @author Stanislav Stoianov
  * @since 18/04/20
- * @version 1.0
+ * @version 1.2
  */
 
 @Controller
 public class GamesController {
 
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private RecordService recordService;
+
+    @Autowired
+    private RecordRepository recordRepository;
+
     @GetMapping(value = "/games")
-    public ModelAndView main() {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("games");
-        return modelAndView;
+    public String getForm(Model model) {
+        model.addAttribute("record", new Record());
+        return "games";
+    }
+
+    @PostMapping(value = "/games")
+    public String addGameRecord(@ModelAttribute Record record, Model model){
+        model.addAttribute("record", record);
+        recordService.saveRecordFromGamesPost(record);
+        return "records";
     }
 }

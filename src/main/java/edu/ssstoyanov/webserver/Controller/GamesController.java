@@ -31,6 +31,6 @@ public class GamesController {
     public String addGameRecord(@ModelAttribute Record record, Model model){
         model.addAttribute("record", record);
         recordService.saveRecordFromGamesPost(record);
-        return "records";
+        return "games";
     }
 }

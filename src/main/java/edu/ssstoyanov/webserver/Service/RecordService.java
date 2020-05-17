@@ -38,16 +38,6 @@ public class RecordService {
     }
 
     @Transactional
-    public Record saveRecord(String game, Long score, User user) {
-        Record record = new Record();
-        record.setUser(user);
-        record.setScore(score);
-        record.setGame(game);
-        recordRepository.saveAndFlush(record);
-        return record;
-    }
-
-    @Transactional
     public Record saveRecordFromGamesPost(Record record) {
         User user = userService.findUserByUserName(SecurityContextHolder.getContext().getAuthentication().getName());
         record.setUser(user);

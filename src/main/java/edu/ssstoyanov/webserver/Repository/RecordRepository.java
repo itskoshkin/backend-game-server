@@ -20,4 +20,9 @@ public interface RecordRepository extends JpaRepository<Record, Integer> {
     List<Record> getAllByUser(User user);
 
     List<Record> getByUser(User user);
+
+    List<Record> getByGame(String game);
+
+    Integer deleteRecordByGame(String game);
+
 }

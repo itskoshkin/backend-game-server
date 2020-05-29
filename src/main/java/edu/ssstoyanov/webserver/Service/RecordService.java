@@ -59,4 +59,12 @@ public class RecordService {
         return recordRepository.getByUser(userService.findUserByUserName(username));
     }
 
+    public List<Record> getAllRecordsByGame(String game) {
+        return recordRepository.getByGame(game);
+    }
+
+    @Transactional
+    public Integer deleteAllRecordsByGame(String game) {
+        return recordRepository.deleteRecordByGame(game);
+    }
 }

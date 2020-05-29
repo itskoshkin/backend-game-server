@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * @author Stanislav Stoianov
- * @version 1.3
+ * @version 1.4
  * @see Record
  * @see edu.ssstoyanov.webserver.Service.RecordService
  * @since 16/04/20
@@ -18,4 +18,6 @@ import java.util.List;
 @Repository
 public interface RecordRepository extends JpaRepository<Record, Integer> {
     List<Record> getAllByUser(User user);
+
+    List<Record> getByUser(User user);
 }

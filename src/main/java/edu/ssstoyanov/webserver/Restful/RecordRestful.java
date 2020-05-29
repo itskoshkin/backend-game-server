@@ -5,6 +5,8 @@ import edu.ssstoyanov.webserver.Service.RecordService;
 import edu.ssstoyanov.webserver.Service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -33,9 +35,14 @@ public class RecordRestful {
         return recordService.getAllRecords();
     }
 
-    @GetMapping("/records/{username}")
-    public List<Record> getRecordByUsername(@PathVariable(value = "username") String username) {
+    @GetMapping("/records/username/{username}")
+    public List<Record> getRecordsByUsername(@PathVariable(value = "username") String username) {
         return recordService.getAllRecordsByUsername(username);
+    }
+
+    @GetMapping("/records/game/{game}")
+    public List<Record> getRecordsByGame(@PathVariable(value = "game") String game) {
+        return recordService.getAllRecordsByGame(game);
     }
 
     @PostMapping(value = "/records")
@@ -43,5 +50,11 @@ public class RecordRestful {
         return recordService.saveRecordFromPost(new Record(0, game, score, userService.findUserByUserName(username)));
     }
 
+    @DeleteMapping("/records/game")
+    public ResponseEntity<Long> deleteRecordsByGame(String game) {
+        Integer byGame = recordService.deleteAllRecordsByGame(game);
+        if (byGame != 0) return new ResponseEntity<>(HttpStatus.OK);
+        else return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
 }
 

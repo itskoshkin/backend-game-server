@@ -20,9 +20,9 @@
         <div class="wrap-login100">
             <form class="login100-form validate-form p-l-55 p-r-55 p-t-178">
                 <span class="login100-form-title" th:text="'Привет, '+ ${user_name}"></span>
-                <a href="/records" class="login100-form-btn">Мои рейтинги</a>
+                <a class="login100-form-btn" href="/records">Мои достижения</a>
                 <div class="text-right p-t-13 p-b-23"></div>
-                <a href="/games" class="login100-form-btn">Игры</a>
+                <a class="login100-form-btn" href="/games">Загрузка достижений</a>
                 <div class="text-right p-t-13 p-b-23"></div>
             </form>
             <form class="login100-form validate-form p-l-55 p-r-55 p-t-178" method="POST" th:action="@{/logout}">
@@ -33,14 +33,14 @@
     </div>
 </div>
 
-<script th:src="@{vendor/jquery/jquery-3.2.1.min.js}"></script>
-<script th:src="@{vendor/animsition/js/animsition.min.js}"></script>
-<script th:src="@{vendor/bootstrap/js/popper.js}"></script>
-<script th:src="@{vendor/bootstrap/js/bootstrap.min.js}"></script>
-<script th:src="@{vendor/select2/select2.min.js}"></script>
-<script th:src="@{vendor/daterangepicker/moment.min.js}"></script>
-<script th:src="@{vendor/daterangepicker/daterangepicker.js}"></script>
-<script th:src="@{vendor/countdowntime/countdowntime.js}"></script>
-<script th:src="@{js/main.js}"></script>
+<script defer th:src="@{vendor/jquery/jquery-3.2.1.min.js}"></script>
+<script defer th:src="@{vendor/animsition/js/animsition.min.js}"></script>
+<script defer th:src="@{vendor/bootstrap/js/popper.js}"></script>
+<script defer th:src="@{vendor/bootstrap/js/bootstrap.min.js}"></script>
+<script defer th:src="@{vendor/select2/select2.min.js}"></script>
+<script defer th:src="@{vendor/daterangepicker/moment.min.js}"></script>
+<script defer th:src="@{vendor/daterangepicker/daterangepicker.js}"></script>
+<script defer th:src="@{vendor/countdowntime/countdowntime.js}"></script>
+<script defer th:src="@{js/main.js}"></script>
 </body>
 </html>

@@ -47,7 +47,7 @@ public class SignUpController {
             modelAndView.setViewName("signup");
         } else {
             userService.saveUser(user);
-            modelAndView.addObject("successMessage", "User has been registered successfully");
+            modelAndView.addObject("successMessage", "Регистрация выполнена успешно");
             modelAndView.addObject("user", new User());
             modelAndView.setViewName("signup");
 

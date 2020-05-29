@@ -1,5 +1,6 @@
 package edu.ssstoyanov.webserver.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,10 +10,11 @@ import javax.persistence.*;
 
 /**
  * @author Stanislav Stoianov
- * @version 1.3
+ * @version 1.4
  * @apiNote Hibernate class used to record points in the players table
  * @see edu.ssstoyanov.webserver.Service.RecordService
  * @see edu.ssstoyanov.webserver.Repository.RecordRepository
+ * @see edu.ssstoyanov.webserver.Restful.RecordRestful
  * @since 16/04/20
  */
 
@@ -31,6 +33,7 @@ public class Record {
     private String game;
     @Column(name = "score")
     private Long score;
+    @JsonIgnore
     @ManyToOne(optional = false, cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
     private User user;

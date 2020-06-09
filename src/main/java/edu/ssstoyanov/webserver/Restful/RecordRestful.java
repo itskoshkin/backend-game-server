@@ -1,6 +1,8 @@
 package edu.ssstoyanov.webserver.Restful;
 
+import edu.ssstoyanov.webserver.Exceptions.UserNotFoundException;
 import edu.ssstoyanov.webserver.Model.Record;
+import edu.ssstoyanov.webserver.Model.User;
 import edu.ssstoyanov.webserver.Service.RecordService;
 import edu.ssstoyanov.webserver.Service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -46,15 +48,24 @@ public class RecordRestful {
     }
 
     @PostMapping(value = "/records")
-    public Record addRecord(String username, String game, Long score) {
-        return recordService.saveRecordFromPost(new Record(0, game, score, userService.findUserByUserName(username)));
+    public ResponseEntity<String> addRecord(String username, String game, Long score) {
+        User user = userService.findUserByUserName(username);
+        if (user == null) {
+            return new ResponseEntity<>("User not found " + username, HttpStatus.NOT_FOUND);
+        } else {
+            recordService.saveRecordFromPost(new Record(0, game, score, user));
+            return new ResponseEntity<>(HttpStatus.CREATED);
+        }
     }
 
     @DeleteMapping("/records/game")
-    public ResponseEntity<Long> deleteRecordsByGame(String game) {
+    public ResponseEntity<String> deleteRecordsByGame(String game) {
         Integer byGame = recordService.deleteAllRecordsByGame(game);
-        if (byGame != 0) return new ResponseEntity<>(HttpStatus.OK);
-        else return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        if (byGame != 0) {
+            return new ResponseEntity<>(HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("Game not found " + game, HttpStatus.NOT_FOUND);
+        }
     }
 }
 

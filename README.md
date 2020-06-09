@@ -28,14 +28,14 @@
 
 ## Веб-интерфейс 
 
-http://localhost:8080, http://localhost:8080/main - главная страница  
-http://localhost:8080/signin - вход  
-http://localhost:8080/signup - регистрация  
-http://localhost:8080/homepage - домашняя страница  
-http://localhost:8080/records - просмотор записей   
-http://localhost:8080/games - добавление записей  
-http://localhost:8080/admin - админ-страница  
-http://localhost:8080/error - страница ошибки  
+* http://localhost:8080, http://localhost:8080/main - главная страница  
+* http://localhost:8080/signin - вход  
+* http://localhost:8080/signup - регистрация  
+* http://localhost:8080/homepage - домашняя страница  
+* http://localhost:8080/records - просмотор записей   
+* http://localhost:8080/games - добавление записей  
+* http://localhost:8080/admin - админ-страница  
+* http://localhost:8080/error - страница ошибки  
 
 ## Используемые технологии
 

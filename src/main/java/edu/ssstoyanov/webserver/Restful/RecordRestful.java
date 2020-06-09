@@ -1,6 +1,5 @@
 package edu.ssstoyanov.webserver.Restful;
 
-import edu.ssstoyanov.webserver.Exceptions.UserNotFoundException;
 import edu.ssstoyanov.webserver.Model.Record;
 import edu.ssstoyanov.webserver.Model.User;
 import edu.ssstoyanov.webserver.Service.RecordService;

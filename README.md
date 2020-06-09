@@ -8,7 +8,7 @@
 
 **GET** Получение всех записей
 
-`http://localhost:8080/rest/api/record
+`http://localhost:8080/rest/api/records`
 
 **GET** Получение всех записей по пользователю
 

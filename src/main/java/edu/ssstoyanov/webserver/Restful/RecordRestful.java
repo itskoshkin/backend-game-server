@@ -66,5 +66,6 @@ public class RecordRestful {
             return new ResponseEntity<>("Game not found " + game, HttpStatus.NOT_FOUND);
         }
     }
+
 }
 

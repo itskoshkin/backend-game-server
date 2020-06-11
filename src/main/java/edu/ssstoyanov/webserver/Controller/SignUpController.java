@@ -36,7 +36,6 @@ public class SignUpController {
     public ModelAndView createNewUser(@Valid User user, BindingResult bindingResult) {
         ModelAndView modelAndView = new ModelAndView();
         User userExists = userService.findUserByUserName(user.getUsername());
-
         if (userExists != null) {
             bindingResult
                     .rejectValue("username", "error.user",
